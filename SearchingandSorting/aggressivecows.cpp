@@ -1,61 +1,61 @@
 // #include <bits/stdc++.h>
 // using namespace std;
 
-// bool check(long long pos[], int c, int n, long long distance)
-// {
-//     int count = 1;
-//     long long lastpos = pos[0];
-//     for (int i = 1; i < n; i++)
-//     {
-//         if (pos[i] - lastpos >= distance)
-//         {
-//             lastpos = pos[i];
-//             count++;
-//         }
-//         if (count == c)
-//         {
-//             return true;
-//         }
-//     }
-//     return false;
-// }
+bool check(long long pos[], int c, int n, long long distance)
+{
+    int count = 1;
+    long long lastpos = pos[0];
+    for (int i = 1; i < n; i++)
+    {
+        if (pos[i] - lastpos >= distance)
+        {
+            lastpos = pos[i];
+            count++;
+        }
+        if (count == c)
+        {
+            return true;
+        }
+    }
+    return false;
+}
 
-// int main()
-// {
-//     int t;
-//     cin >> t;
-//     while (t--)
-//     {
-//         int n, c;
-//         cin >> n >> c;
-//         long long pos[n];
-//         for(int i=0; i<n; i++)
-//         {
-//             cin >> pos[i++];
-//         }
-//         sort(pos, pos + n);
-//         long long start = 0;
-//         long long end = pos[n - 1] - pos[0];
-//         long long ans = -1;
-//         while (start <= end)
-//         {
-//             long long mid =start + (end - start) / 2;
-//             if (check(pos, c, n, mid))
-//             {
-//                 ans = mid;
-//                 start = mid + 1;
-//             }
-//             else
-//             {
-//                 end = mid - 1;
-//             }
-//         }
-//         cout << ans << endl;
-//     }
-//     return 0;
-// }
+int main()
+{
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        int n, c;
+        cin >> n >> c;
+        long long pos[n];
+        for(int i=0; i<n; i++)
+        {
+            cin >> pos[i++];
+        }
+        sort(pos, pos + n);
+        long long start = 0;
+        long long end = pos[n - 1] - pos[0];
+        long long ans = -1;
+        while (start <= end)
+        {
+            long long mid =start + (end - start) / 2;
+            if (check(pos, c, n, mid))
+            {
+                ans = mid;
+                start = mid + 1;
+            }
+            else
+            {
+                end = mid - 1;
+            }
+        }
+        cout << ans << endl;
+    }
+    return 0;
+}
 
-
+// Submitted code
 #include <bits/stdc++.h> 
 using namespace std; 
 bool ispossibleCows(int *arr, int n, int dmid, int cows) { 
