@@ -1,11 +1,20 @@
-
-
+// TC : best case: O(nlogn)
+// TC : worst case: O(n^2)
+// SC : average case: O(logn) 
+// SC : worst case: O(n) 
+// fast, in-place algo
+// not a stable algorithm
 
 #include <bits/stdc++.h>
 using namespace std;
 
 int partition(int *arr, int beg, int end)
 {
+    /* randomised partition :
+        pIndex = random(beg, end)
+        swap(arr[pIndex], arr[end])
+        // avoiding worst case
+    */
     int pIndex = beg;
     int pivot = arr[end];
     for (int i = beg; i < end; i++)
@@ -28,6 +37,10 @@ void quickSort(int *arr, int beg, int end)
 {
     if (beg < end)
     {
+        /* randomised partition :
+            call randomisedPartition(arr, beg, end)
+        // avoiding worst case
+    */
         int pIndex = partition(arr, beg, end);
         quickSort(arr, beg, pIndex-1);
         quickSort(arr, pIndex+1, end);
