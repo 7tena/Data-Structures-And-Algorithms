@@ -1,12 +1,10 @@
-// insert at a particular position
-// 0 = head/start
 #include<iostream>
 using namespace std;
 
 struct Node{
     int data;
     Node* next;
-}*first=NULL;
+}*head=NULL;
 
 // count no of nodes
 int count(struct Node *p){
@@ -18,16 +16,18 @@ int count(struct Node *p){
     return count;
 }
 
+// 0 = head/start
 // insert using index
+// insert at a particular position
 void insertAtPosition(Node* p, int pos, int x){
-    if(pos < 0 || pos > count(first)){
+    if(pos < 0 || pos > count(head)){
         return;
     }
     struct Node* t = new Node;
     t->data=x;
     if(p == 0){
-        t->next=first;
-        first=t;
+        t->next=head;
+        head=t;
     }else{
         for(int i=0; i< pos-1; i++)
             p=p->next;
@@ -39,9 +39,23 @@ void insertAtPosition(Node* p, int pos, int x){
 
 // insert without index
 void insertFront(int x){
-
+    Node* temp = new Node;
+    temp->data = x;
+    temp->next = head;
+    head = temp;
 }
 
+// head only
 void insertLast(int x){
-    
+    Node* temp = new Node;
+    temp->data = x;
+    Node* p = head;
+    if(!head){  // empty list
+        head->next = temp;
+    }else{
+        while(p){
+            p = p->next;
+        }
+        p->next = temp;
+    }
 }
