@@ -25,11 +25,11 @@ void insertAtPosition(Node* p, int pos, int x){
     }
     struct Node* t = new Node;
     t->data=x;
-    if(p == 0){
+    if(p == 0){ // 1 if indexing starts from 1.
         t->next=head;
         head=t;
     }else{
-        for(int i=0; i< pos-1; i++)
+        for(int i=0; i< pos-1; i++) // pos-2 if indexing starts from 1.
             p=p->next;
         t->next= p->next;
         p->next=t;
