@@ -6,6 +6,8 @@ struct Node{
     Node* next;
 }*head=NULL;
 
+// TC : O(n)
+// SC : O(1)
 void reverseLInkedList(){
     Node *prev, *current, *next;
     current = head;
@@ -20,6 +22,8 @@ void reverseLInkedList(){
 
 // using recursion
 // traverse till the end and start reversing.
+// TC : O(n)
+// SC : O(n)
 void recursiveReverse(Node *p){
     if(p == NULL) 
         return;
