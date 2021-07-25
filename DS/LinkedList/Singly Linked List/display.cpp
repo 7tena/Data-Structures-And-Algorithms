@@ -13,6 +13,8 @@ void display(struct Node *p){
     }
 }
 
+/* iterative method preferred over recursive method because in iterative we use a temp variable 
+ while in recursion we use stack memory for so manuy function calls */
 void recursiveDisplay(struct Node *p){
     if(p!=NULL){
         cout<<p->data;
