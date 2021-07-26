@@ -1,4 +1,4 @@
-## Stack ADT
+## Stack
 
 ### Operations:
 - push
@@ -12,4 +12,10 @@ All these operations run in O(n) time.
 - Used for recursion
 - Implement undo operation in editor
 - Balanced paranthesis and brackets while compilation
+- evaluation of arithmetic and logical expressions
 
+### Infix, Prefix, Postfix
+- Infix : <operand><operator><operand>
+- Prefix(Polish notation) : <operator><operand><operand>
+- Postfix(Reverse polish notation) : <operand><operand><operator>
+- Postfix preferred in machines for computations
