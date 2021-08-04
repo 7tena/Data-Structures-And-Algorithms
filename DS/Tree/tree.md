@@ -26,6 +26,9 @@
     - The left subtree of a node contains only nodes with keys lesser than the node’s key.
     - The right subtree of a node contains only nodes with keys greater than the node’s key.
     - The left and right subtree each must also be a binary search tree.
+    - TC : O(log(n)) for insertion, deletion and searching.
+    - In worst case (when tree has either no left subtree or right subtree and it is equivalent to a linked list) : O(n)
+    - Worst case can be avoided by using balanced binary search tree
 
 ### Properties
 - For *n* nodes, there are `n-1` edges.
