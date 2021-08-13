@@ -1,6 +1,9 @@
 ### C++ tips and tricks
 https://www.geeksforgeeks.org/c-tricks-competitive-programming-c-11/
 
+### OOPs
+1. Virtual functions : https://www.geeksforgeeks.org/virtual-function-cpp/
+
 ### Memory Layout 
 https://medium.com/@vivekkr1020/memory-layout-in-c-87f8b8c67fc5
 1. Text Segment:
