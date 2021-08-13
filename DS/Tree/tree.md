@@ -18,7 +18,9 @@
 - `Balanced binary tree` : 
     - Difference between height of left and right subtree for every node is not more than k(usually 1)
     - diff = | h.left - h.right |
-- `Perfect binary tree` : All levels are completely filled except for the last one in a binary tree.
+- `Perfect binary tree` : 
+    - All levels are completely filled except for the last one in a binary tree.
+    - In a perfect binary free, there are ceil(n/2) nodes at the deepest level.
 - `Heaps` : It is a special tree-based data structure in which the tree is a complete binary tree. 
     - max heap
     - min heap
@@ -62,3 +64,17 @@
     - quick search
     - insertion
     - deletion
+
+### Traversals
+- Process of visiting each node in the tree exactly once in some order
+- Visit: reading/processing data in the node
+- Two types:
+    - BFS : 
+        - O(V+E)
+        - using queue
+        - level-order
+    - DFS :
+        - using stack
+        - preorder : <root><left><right>
+        - inorder : <left><root><right>
+        - postorder : <left><right><root>
