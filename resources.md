@@ -4,20 +4,20 @@ https://www.geeksforgeeks.org/c-tricks-competitive-programming-c-11/
 ### Memory Layout 
 https://medium.com/@vivekkr1020/memory-layout-in-c-87f8b8c67fc5
 1. Text Segment:
-Also, know as Code segment, Contains executable instructions.
-Usually, Text segment is sharable and hence only a single copy exists as well as its read-only.
+    - Also, know as Code segment, Contains executable instructions.
+    - Usually, Text segment is sharable and hence only a single copy exists as well as its read-only.
 2. Data Segment
-Divided into two parts
-Initialized Data Segment
-Contains Global and static variables that are initialized. Its not a read-only segment and hence the values can be modified.
-Uninitialized Data Segment
-This is usually called BSS segment.
-Data in this segment are initialized by the kernel to 0 before the program starts execution. This comes after the initialized Data segment in memory.
+    - Divided into two parts
+    - Initialized Data Segment
+      - Contains Global and static variables that are initialized. Its not a read-only segment and hence the values can be modified.
+    - Uninitialized Data Segment
+      - This is usually called BSS segment.
+      - Data in this segment are initialized by the kernel to 0 before the program starts execution. This comes after the initialized Data segment in memory.
 3. Stack:
-Temporary variables are stored in this area. The virtual pointer is also stored here
-Stack Frame: A set of values pushed for one function call is called Stack Frame.
+    - Temporary variables are stored in this area. The virtual pointer is also stored here
+    - Stack Frame: A set of values pushed for one function call is called Stack Frame.
 4. Heap:
-Here dynamic memory allocation takes place
+    - Here dynamic memory allocation takes place
 
 ### Kadanes algorithm
 1. Kadanes algorithm is used to find the maximum subarray sum.
