@@ -6,6 +6,7 @@ https://www.geeksforgeeks.org/c-tricks-competitive-programming-c-11/
 
 ### Memory Layout 
 https://medium.com/@vivekkr1020/memory-layout-in-c-87f8b8c67fc5
+https://www.geeksforgeeks.org/memory-layout-of-c-program/
 1. Text Segment:
     - Also, know as Code segment, Contains executable instructions.
     - Usually, Text segment is sharable and hence only a single copy exists as well as its read-only.
@@ -35,3 +36,4 @@ https://medium.com/@vivekkr1020/memory-layout-in-c-87f8b8c67fc5
 - llabs() function: This is the long long int version of abs() function. Both the input and output are of long long int type.
 - The strtod() is a builtin function in C and C++ STL which interprets the contents of the string as a floating point number and return its value as a double. It sets a pointer to point to the first character after the last valid character of the string, only if there is any, otherwise it sets the pointer to null.
 - The floating point number composed of four elements. They are sign, Base, Significand and Exponent.
+- Map in C++ STL is implemented using a self balancing binary search tree (typically Red Black Tree).  This implementation ensures O(Log n) time complexity for search, insert and delete operations.
