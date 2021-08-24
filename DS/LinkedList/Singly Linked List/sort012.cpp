@@ -1,135 +1,108 @@
 // { Driver Code Starts
-#include<bits/stdc++.h>
-/* structure for a Node */
-struct Node
-{
-  int data;
-  struct Node *next;
-  
-  Node(int x){
-      data = x;
-      next = NULL;
-  }
-  
+#include <bits/stdc++.h>
+
+using namespace std;
+/* Link list Node */
+struct Node {
+    int data;
+    struct Node *next;
+    Node(int x) {
+        data = x;
+        next = NULL;
+    }
 };
+
+struct Node *start = NULL;
 
 
  // } Driver Code Ends
-/* structure for a node */
 /*
-struct Node
-{
-  int data;
-  struct Node *next;
-  
-  Node(int x){
-      data = x;
-      next = NULL;
-  }
-  
-};
- */
  
-// This function should return head of
-// the modified list
+  Node is defined as
+  struct Node {
+    int data;
+    struct Node *next;
+    Node(int x) {
+        data = x;
+        next = NULL;
+    }
+};
+
+*/
 class Solution
 {
     public:
-    Node *sortedInsert(Node* head, int data)
-    {
-       Node *newnode = new Node(data);
-       Node *temp;
-       Node *prev;
-       prev = NULL;
-       temp = head;
-       if(temp->data > data){
-           temp = temp->next;
-           while(temp->next != head){
-               temp = temp->next;
-           }
-           newnode->next = head;
-           head = newnode;
-           temp->next = head;
-           
-       }else{
-         while(temp->data <= data){
-           if(temp == head && prev)
-                break;
-            prev = temp;
+    //Function to sort a linked list of 0s, 1s and 2s.
+    Node* segregate(Node *head) {
+        Node* temp = head;
+        int count[3] = {0 , 0, 0};
+        while(temp){
+            count[temp->data]++;
             temp = temp->next;
-         }
-         prev->next = newnode;
-         newnode->next = temp;  
-       }
-       return head;
+        }
+        temp = head;
+        int i=0;
+        while(temp){
+            if(count[i] == 0)
+                i++;
+            else{
+                temp->data = i;
+                count[i]--;
+                temp = temp->next;
+            }
+        }
+        return head;
     }
 };
 
+
 // { Driver Code Starts.
 
-/* Function to print Nodes in a given linked list */
-void printList(struct Node *start)
-{
-  struct Node *temp;
-
-  if(start != NULL)
-  {
-    temp = start;
-    do { printf("%d ", temp->data);
-      temp = temp->next;
-    } while(temp != start);
+// Function to sort a linked list of 0s, 1s and 2s
+void printList(struct Node *Node) {
+    while (Node != NULL) {
+        printf("%d ", Node->data);
+        Node = Node->next;
+    }
     printf("\n");
-  }
 }
-/* Driver program to test above functions */
-int main()
-{
-int t,n,x;
-scanf("%d",&t);
-int arr;
-  while(t--){
-  scanf("%d",&n);
-  int list_size, i;
-  
-  /* start with empty linked list */
-  struct Node *start = NULL;
-  struct Node *temp,*r;
-  
-  
-    /* Create linked list from the array arr[].
-    Created linked list will be 1->2->11->56->12 */
-    if(n>0){
-      scanf("%d",&arr);
-    
-    temp = new Node(arr);
-    start=temp;
-    r=start;
-    }
-    for (i = 0; i<n-1; i++)
-    {
-        scanf("%d",&arr);
-        temp = new Node(arr);
-        r->next=temp;
-        r=r->next;
-    }
-    
-    if(n>0)
-    temp->next=start;
- 
-    scanf("%d",&x);
-    Solution ob;
-    start = ob.sortedInsert(start,x);
-    printList(start);
-    r=start;
-    while(r!=start->next)
-    {
 
-      temp=start;
-      start=start->next;
-      free(temp);
+/* Drier program to test above function*/
+void insert(int n1) {
+    int n, value, i;
+    // scanf("%d",&n);
+    n = n1;
+    struct Node *temp;
+    for (i = 0; i < n; i++) {
+        scanf("%d", &value);
+
+        if (i == 0) {
+            start = new Node(value);
+            temp = start;
+            continue;
+        } else {
+            temp->next = new Node(value);
+            temp = temp->next;
+            temp->next = NULL;
+        }
     }
-    free(start);
 }
-  return 0;
-}
-  // } Driver Code Ends
+
+int main() {
+
+    int n;
+
+    int t;
+    scanf("%d", &t);
+
+    while (t--) {
+        scanf("%d", &n);
+
+        insert(n);
+        Solution ob;
+        struct Node *newHead = ob.segregate(start);
+        printList(newHead);
+    }
+
+    return 0;
+}  // } Driver Code Ends
