@@ -33,15 +33,15 @@ void preOrder(Node *root){
 void inOrder(Node *root){
     if(root == NULL)
         return;
-    preOrder(root->left);
+    inOrder(root->left);
     cout << root->data;
-    preOrder(root->right);  
+    inOrder(root->right);  
 }
 
 void postOrder(Node *root){
     if(root == NULL)
         return;
-    preOrder(root->left);
-    preOrder(root->right);
+    postOrder(root->left);
+    postOrder(root->right);
     cout << root->data;
 }

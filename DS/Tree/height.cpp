@@ -11,5 +11,5 @@ struct Node{
 int height(Node *root){
     if(root == NULL)
         return -1; // to get 0 for leaf nodes
-    return max(height(root->left), height(root->right))+1; 
+    return max(height(root->left), height(root->right)) + 1; 
 }

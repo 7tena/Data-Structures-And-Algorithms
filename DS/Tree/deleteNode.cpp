@@ -27,7 +27,7 @@ Node* deleteNode(Node* root, int data){
     else if(data > root->data) 
         deleteNode(root->right, data);
     else{
-        if(!root->left && !root->right){// one child
+        if(!root->left && !root->right){// zero child
             delete root;
             root = NULL;
         }else if(!root->left){// one child-left child empty
