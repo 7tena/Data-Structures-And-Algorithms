@@ -1,37 +1,14 @@
-// { Driver Code Starts
 #include<bits/stdc++.h>
-/* structure for a Node */
 struct Node
 {
   int data;
   struct Node *next;
-  
   Node(int x){
       data = x;
       next = NULL;
   }
-  
 };
 
-
- // } Driver Code Ends
-/* structure for a node */
-/*
-struct Node
-{
-  int data;
-  struct Node *next;
-  
-  Node(int x){
-      data = x;
-      next = NULL;
-  }
-  
-};
- */
- 
-// This function should return head of
-// the modified list
 class Solution
 {
     public:
@@ -68,9 +45,6 @@ class Solution
     }
 };
 
-// { Driver Code Starts.
-
-/* Function to print Nodes in a given linked list */
 void printList(struct Node *start)
 {
   struct Node *temp;
@@ -84,7 +58,7 @@ void printList(struct Node *start)
     printf("\n");
   }
 }
-/* Driver program to test above functions */
+
 int main()
 {
 int t,n,x;
@@ -93,14 +67,8 @@ int arr;
   while(t--){
   scanf("%d",&n);
   int list_size, i;
-  
-  /* start with empty linked list */
   struct Node *start = NULL;
   struct Node *temp,*r;
-  
-  
-    /* Create linked list from the array arr[].
-    Created linked list will be 1->2->11->56->12 */
     if(n>0){
       scanf("%d",&arr);
     
@@ -115,10 +83,8 @@ int arr;
         r->next=temp;
         r=r->next;
     }
-    
     if(n>0)
     temp->next=start;
- 
     scanf("%d",&x);
     Solution ob;
     start = ob.sortedInsert(start,x);
@@ -135,4 +101,3 @@ int arr;
 }
   return 0;
 }
-  // } Driver Code Ends

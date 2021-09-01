@@ -9,7 +9,7 @@ struct Node{
 void sum(struct Node *p){
     int sum=0;
     if (p != NULL){
-        sum++;
+        sum += p->data;
         p = p->next;
     }
 }
