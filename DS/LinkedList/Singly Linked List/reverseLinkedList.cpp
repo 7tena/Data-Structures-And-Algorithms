@@ -12,7 +12,7 @@ void reverseLInkedList(){
     Node *prev, *current, *next;
     current = head;
     prev = NULL;
-    while(!current){
+    while(current){
         next = current->next;
         current->next = prev;
         prev = current;
