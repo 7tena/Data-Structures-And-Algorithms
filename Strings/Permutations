@@ -1,0 +1,66 @@
+Given two strings s1 and s2, check if s2 is a permutation of s1. Two strings are permutations of each other if they contain exactly the same characters in the same frequencies, but the order of characters can be different.
+
+Constraints
+The length of both strings is between 1 and 100,000.
+Both strings consist of lowercase English letters only.
+Examples
+Input: s1 = "listen", s2 = "silent"
+
+Output: true
+
+Explanation: "silent" is a permutation of "listen" because both strings have the same characters with the same frequencies.
+
+Input: s1 = "triangle", s2 = "integral"
+
+Output: true
+
+Explanation: "integral" is a permutation of "triangle".
+
+Input: s1 = "hello", s2 = "world"
+#include <iostream>
+#include <string>
+using namespace std;
+
+bool areAnagrams(const string& s1, const string& s2) {
+    // Check if lengths are different
+    if (s1.length() != s2.length()) {
+        return false;
+    }
+
+    // Array to store character frequencies
+    int charCount[26] = {0};
+
+    // Count frequencies for s1 and s2
+    for (int i = 0; i < s1.length(); ++i) {
+        charCount[s1[i] - 'a']++;
+        charCount[s2[i] - 'a']--;
+    }
+
+    // Check if all counts are zero
+    for (int count : charCount) {
+        if (count != 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+int main() {
+    string s1 = "listen";
+    string s2 = "silent";
+    cout << "Are the strings anagrams? " << (areAnagrams(s1, s2) ? "true" : "false") << endl;
+
+    s1 = "hello";
+    s2 = "world";
+    cout << "Are the strings anagrams? " << (areAnagrams(s1, s2) ? "true" : "false") << endl;
+
+    return 0;
+}
+Output: false
+
+Explanation: "world" is not a permutation of "hello" because the characters do not match.
+
+This problem requires checking whether two given strings are permutations of each other 
+by verifying if they have identical character distributions.
+
