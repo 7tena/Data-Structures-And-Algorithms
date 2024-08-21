@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+void productExceptSelf(const int nums[], int n, int result[]) {
+    // Step 1: Calculate left products
+    int *leftProduct = new int[n];
+    leftProduct[0] = 1;
+    for (int i = 1; i < n; ++i) {
+        leftProduct[i] = leftProduct[i - 1] * nums[i - 1];
+    }
+
+    // Step 2: Calculate right products and update result
+    int rightProduct = 1;
+    for (int i = n - 1; i >= 0; --i) {
+        result[i] = leftProduct[i] * rightProduct;
+        rightProduct *= nums[i];
+    }
+
+    // Cleanup
+    delete[] leftProduct;
+}
+
+int main() {
+    int nums[] = {1, 2, 3, 4};
+    int n = sizeof(nums) / sizeof(nums[0]);
+    int result[n];
+
+    productExceptSelf(nums, n, result);
+
+    // Print the result
+    cout << "Product of array except self: ";
+    for (int i = 0; i < n; ++i) {
+        cout << result[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
