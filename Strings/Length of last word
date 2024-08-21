@@ -1,0 +1,23 @@
+int lengthOfLastWord(string s) {
+        // Remove trailing spaces
+        int n = s.length();
+        int end = n - 1;
+        
+        // Find the end of the last word
+        while (end >= 0 && s[end] == ' ') {
+            end--;
+        }
+        
+        // If the string is empty or contains only spaces
+        if (end < 0) return 0;
+        
+        // Find the start of the last word
+        int start = end;
+        while (start >= 0 && s[start] != ' ') {
+            start--;
+        }
+        
+        // The length of the last word
+        return end - start;
+    }
+};
