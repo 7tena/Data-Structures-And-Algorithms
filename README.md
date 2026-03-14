@@ -1,2 +1,2 @@
 ### CN-competitiveProgramming
-Resources and C++ programs on Data Structures and Competitive Programming.
+Resources and Java/C++ programs on Data Structures and Competitive Programming.
